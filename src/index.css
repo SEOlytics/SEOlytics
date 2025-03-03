@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --glass-border: rgba(62, 123, 39, 0.2);
+    --glass-bg: rgba(18, 53, 36, 0.1);
+  }
+}
+
+.glassmorphism {
+  background: rgba(18, 53, 36, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(62, 123, 39, 0.3);
+}
+
+.button-glow {
+  @apply relative overflow-hidden transition-all duration-300;
+}
+
+.button-glow::after {
+  content: '';
+  @apply absolute inset-0 opacity-0 transition-opacity duration-300 bg-[#3E7B27];
+}
+
+.button-glow:hover::after {
+  @apply opacity-20;
+}
+
+.parallax-section {
+  @apply relative overflow-hidden;
+  transform-style: preserve-3d;
+}
+
+.fade-in {
+  @apply opacity-0 transition-opacity duration-1000;
+}
+
+.fade-in.visible {
+  @apply opacity-100;
+}
+
+.slide-up {
+  @apply translate-y-10 opacity-0 transition-all duration-700;
+}
+
+.slide-up.visible {
+  @apply translate-y-0 opacity-100;
+}
+
+.running-border-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 2px solid #EFE3C2;
+}
+
+.running-border-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(239, 227, 194, 0.2),
+    transparent
+  );
+  animation: running-border 3s linear infinite;
+}
+
+.running-border-button:hover::before {
+  animation: running-border 1.5s linear infinite;
+}
+
+@keyframes running-border {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.running-border-button:hover {
+  box-shadow: 0 0 15px rgba(239, 227, 194, 0.5);
+  transform: translateY(-1px);
+}
+
+.running-border-button:active {
+  transform: translateY(1px);
+}
+
+.section-background {
+  background-image: url('/Images/bg1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;  /* This creates a parallax-like effect */
+}

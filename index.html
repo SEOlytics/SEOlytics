@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/Images/Icon.png" />
+    <link rel="apple-touch-icon" href="/Images/Icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="keywords"
+      content="SEO, AI, Artificial Intelligence, Content Optimization, Search Rankings, Content Creation, SEO Strategy"
+    />
+
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Stir Up Your SEO Strategy with AI" />
+    <meta
+      property="og:description"
+      content="Harness the power of artificial intelligence to optimize your content and skyrocket your rankings. Master the art of creating killer content that captivates, attracts, and climbs to the top of search results with help from artificial intelligence."
+    />
+    <meta property="og:image" content="URL_to_image.jpg" />
+    <!-- Replace with a relevant image URL -->
+    <meta property="og:url" content="https://yourwebsite.com" />
+    <!-- Replace with your website URL -->
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Stir Up Your SEO Strategy with AI" />
+    <meta
+      name="twitter:description"
+      content="Harness the power of artificial intelligence to optimize your content and skyrocket your rankings. Master the art of creating killer content that captivates, attracts, and climbs to the top of search results with help from artificial intelligence."
+    />
+    <meta name="twitter:image" content="URL_to_image.jpg" />
+    <!-- Replace with a relevant image URL -->
+    <meta name="twitter:url" content="https://yourwebsite.com" />
+    <!-- Replace with your website URL -->
+    <title>SEO.lk</title>
+
+    <!-- GDPR Banner Styles -->
+    <style>
+      .gdpr-banner {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border: 2px dashed #79c655;
+        border-radius: 15px;
+        padding: 15px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 80%;
+        max-width: 500px;
+        z-index: 1000;
+      }
+      .gdpr-banner p {
+        color: #efe3c2;
+        font-size: 14px;
+        margin: 0 0 10px 0;
+      }
+      .gdpr-btn {
+        margin: 10px;
+        padding: 10px 20px;
+        border: 2px dashed #79c655;
+        border-radius: 10px 0px 10px 0px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: opacity 0.3s ease;
+      }
+      .gdpr-btn:hover {
+        opacity: 0.9;
+      }
+      .accept-btn {
+        background-color: #cdbfe44a;
+        color: #efe3c2;
+      }
+      .decline-btn {
+        background-color: #c8bfd838;
+        color: #efe3c2;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- GDPR Banner -->
+    <div class="gdpr-banner">
+      <p>
+        We use cookies to enhance your experience. By continuing to visit this
+        site, you agree to our use of cookies.
+      </p>
+      <button class="gdpr-btn accept-btn" onclick="acceptCookies()">
+        Accept
+      </button>
+      <button class="gdpr-btn decline-btn" onclick="declineCookies()">
+        Decline
+      </button>
+    </div>
+
+    <script type="module" src="/src/main.tsx"></script>
+    <!-- GDPR Banner Script -->
+    <script>
+      function acceptCookies() {
+        localStorage.setItem("gdpr-consent", "accepted");
+        document.querySelector(".gdpr-banner").style.display = "none";
+      }
+
+      function declineCookies() {
+        localStorage.setItem("gdpr-consent", "declined");
+        document.querySelector(".gdpr-banner").style.display = "none";
+      }
+
+      // Check if user has already made a choice
+      window.addEventListener("load", function () {
+        if (!localStorage.getItem("gdpr-consent")) {
+          document.querySelector(".gdpr-banner").style.display = "block";
+        } else {
+          document.querySelector(".gdpr-banner").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
